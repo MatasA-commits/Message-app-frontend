@@ -1,0 +1,134 @@
+body {
+    background-color: #e8fffb;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.space-btw {
+    justify-content: space-between;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.column {
+    flex-direction: column;
+}
+
+.grow1 {
+    flex: 1
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grow2 {
+    flex: 2
+}
+
+.mb-1{
+    margin-bottom: 10px;
+}
+
+.m-1 {
+    margin: 10px;
+}
+
+.m-3 {
+    margin: 30px;
+}
+
+.mt-5 {
+    margin-top: 50px;
+}
+
+.ml-3 {
+    margin-left: 30px;
+}
+
+.p-3 {
+    padding: 30px;
+}
+
+.profileImg {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.toolbar{
+    background-color: rgb(68, 17, 250);
+    padding: 10px 20px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.toolbar a {
+    margin-right: 10px;
+}
+
+.userCard {
+    padding: 10px;
+    margin: 10px;
+    min-width: 100px;
+}
+
+.container {
+    width: 900px;
+}
+
+.conversationCard {
+    padding: 1px 10px;
+    background-color: #0e01c9b7;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.chatWindow {
+    height: 580px;
+}
+
+
+.chatWindow {
+    background-color: #f8f8f8;
+}
+
+.chatTable {
+    overflow: auto;
+}
+
+.chatTable::-webkit-scrollbar {
+    display: none;
+}
+
+.chatBottom input {
+    padding: 10px;
+    width: 90%;
+}
+
+
+.singleMessage {
+    padding: 5px;
+    background-color: #90dafc;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.chatImage {
+    height: 200px;
+}
+
+@media (min-height: 800px) {
+    .chatWindow {
+        height: 750px;
+    }
+}
