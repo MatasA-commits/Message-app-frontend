@@ -4,7 +4,7 @@ import {setUser} from "../redux/data";
 import { TextField, Box, Button, Card } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { setAllUsers } from '../redux/data';
-import allowedOrigin from '../../config/alowedOrigins';
+import allowedOrigin from '../config/alowedOrigins';
 
 const LoginPage = () => {
     const nameRef = useRef()
