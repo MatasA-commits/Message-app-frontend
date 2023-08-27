@@ -4,6 +4,7 @@ import {setUser} from "../redux/data";
 import { TextField, Box, Button, Card } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { setAllUsers } from '../redux/data';
+import allowedOrigin from '../../config/alowedOrigins';
 
 const LoginPage = () => {
     const nameRef = useRef()
@@ -14,7 +15,7 @@ const LoginPage = () => {
 
     const fetchAllUsers = () => {
         
-        fetch("http://localhost:3600/allUsers")
+        fetch(`${allowedOrigin}/allUsers`)
         .then(res => res.json())
         .then(data => {
             dispatch(setAllUsers(data.users))
@@ -35,7 +36,7 @@ const LoginPage = () => {
             body: JSON.stringify(user)
         }
 
-        fetch("http://localhost:3600/login", options)
+        fetch(`${allowedOrigin}/login`, options)
             .then(res => res.json())
             .then(data => {
                 if( data.success === true ) {

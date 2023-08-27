@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { Card, Button, Box } from '@mui/material'
 import { setOpenUser } from '../redux/data'
+import allowedOrigin from '../../config/alowedOrigins'
 
 const SingleUserProfilePage = () => {
   const dispatch = useDispatch()
@@ -25,7 +26,7 @@ const SingleUserProfilePage = () => {
       body: JSON.stringify(data)
   }
 
-  fetch("http://localhost:3600/singleUser", options)
+  fetch(`${allowedOrigin}/singleUser`, options)
             .then(res => res.json())
             .then(data => {
               dispatch(setOpenUser(data))
@@ -48,7 +49,7 @@ const SingleUserProfilePage = () => {
             body: JSON.stringify(data)
         }
 
-        fetch("http://localhost:3600/newConversation", options)
+        fetch(`${allowedOrigin}/newConversation`, options)
             .then(res => res.json())
             .then(data => {
             })

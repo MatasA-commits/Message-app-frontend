@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, TextField, Button, Card } from '@mui/material';
+import allowedOrigin from '../../config/alowedOrigins';
 
 const RegisterPage = () => {
     const nameRef = useRef()
@@ -31,7 +32,7 @@ const RegisterPage = () => {
             body: JSON.stringify(user)
         }
 
-        fetch("http://localhost:3600/register", options)
+        fetch(`${allowedOrigin}/register`, options)
             .then(res => res.json())
             .then(data => {
                 if (data.success === true) nav("/")

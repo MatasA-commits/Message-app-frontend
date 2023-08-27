@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { Avatar, Box, Button, Icon } from '@mui/material';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import { setOpenConversation } from '../redux/data';
+import allowedOrigin from '../../config/alowedOrigins';
 
 const ChatPage = () => {
     const {id} = useParams()
@@ -32,7 +33,7 @@ const ChatPage = () => {
             body: JSON.stringify(user)
         }
 
-        fetch("http://localhost:3600/sendMessage", options)
+        fetch(`${allowedOrigin}/sendMessage`, options)
             .then(res => res.json())
             .then(data => {
                 dispatch(setOpenConversation(data.conversation))
@@ -42,7 +43,7 @@ const ChatPage = () => {
 
     useEffect(() => {
 
-        fetch("http://localhost:3600/chat/"+id)
+        fetch(`${allowedOrigin}/chat/`+id)
             .then(res => res.json())
             .then(data => {
                 dispatch(setOpenConversation(data.conversation))
@@ -51,7 +52,7 @@ const ChatPage = () => {
  
 
     const like = (index) => {
-        fetch(`http://localhost:3600/like/${id}/${index}`)
+        fetch(`${allowedOrigin}/like/${id}/${index}`)
             .then(res => res.json())
             .then(data => {
                 dispatch(setOpenConversation(data.conversation))

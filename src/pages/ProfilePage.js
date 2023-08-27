@@ -2,6 +2,7 @@ import React, {useRef} from 'react';
 import { Box, TextField, Button, Card } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setAllUsers } from '../redux/data';
+import allowedOrigin from '../../config/alowedOrigins';
 
 const ProfilePage = () => {
     const nameRef = useRef()
@@ -13,7 +14,7 @@ const ProfilePage = () => {
     const myUser = useSelector(state => state.data.value.myUser)
 
     const setUsers = () => {
-        fetch("http://localhost:3600/allUsers")
+        fetch(`${allowedOrigin}/allUsers`)
             .then(res => res.json())
             .then(data => {
                 dispatch(setAllUsers(data.users))
@@ -41,7 +42,7 @@ const ProfilePage = () => {
             body: JSON.stringify(user)
         }
 
-        fetch("http://localhost:3600/update", options)
+        fetch(`${allowedOrigin}/update`, options)
             .then(res => res.json())
             .then(data => {
                 if (data.success === true) {

@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import SingleConversatonCard from "../components/SingleConversatonCard";
 import { setConversations } from '../redux/data';
 import { Box } from '@mui/material';
+import allowedOrigin from '../../config/alowedOrigins';
 
 const ConversationPage = () => {
 
@@ -25,7 +26,7 @@ const ConversationPage = () => {
             body: JSON.stringify(data)
         }
 
-        fetch("http://localhost:3600/getConversations", options)
+        fetch(`${allowedOrigin}/getConversations`, options)
             .then(res => res.json())
             .then(data => {
                 dispatch(setConversations(data.conversations))
@@ -33,7 +34,7 @@ const ConversationPage = () => {
     }
     
     const deleteConversation = (id) => {
-        fetch("http://localhost:3600/deleteConversation/"+id)
+        fetch(`${allowedOrigin}/deleteConversation/`+id)
             .then(res => res.json())
             .then(data => {
                 if(data.success !== true) alert('Error, failed to delete')

@@ -6,6 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import {configureStore} from "@reduxjs/toolkit";
 import {Provider} from "react-redux";
 import dataReducer from "./redux/data"
+import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+
+if (process.env.NODE_ENV === 'production') disableReactDevTools()
 
 const store = configureStore({
     reducer: {

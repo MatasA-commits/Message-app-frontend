@@ -3,6 +3,7 @@ import { useDispatch, useSelector} from "react-redux";
 import SingleUserCard from "../components/SingleUserCard";
 import { setAllUsers } from '../redux/data';
 import { Box } from '@mui/material';
+import allowedOrigin from '../../config/alowedOrigins';
 
 const AllUsersPage = () => {
     const users = useSelector(state => state.data.value.allUsers)
@@ -10,7 +11,7 @@ const AllUsersPage = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        fetch("http://localhost:3600/allUsers")
+        fetch(`${allowedOrigin}/allUsers`)
         .then(res => res.json())
         .then(data => {
             dispatch(setAllUsers(data.users))
