@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { Card, Button, Box } from '@mui/material'
 import { setOpenUser } from '../redux/data'
-import allowedOrigin from '../../config/alowedOrigins'
+import allowedOrigin from '../config/allowedOrigins'
 
 const SingleUserProfilePage = () => {
   const dispatch = useDispatch()

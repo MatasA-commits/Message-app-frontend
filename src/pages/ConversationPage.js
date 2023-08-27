@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import SingleConversatonCard from "../components/SingleConversatonCard";
 import { setConversations } from '../redux/data';
 import { Box } from '@mui/material';
-import allowedOrigin from '../../config/alowedOrigins';
+import allowedOrigin from '../config/allowedOrigins';
 
 const ConversationPage = () => {
 

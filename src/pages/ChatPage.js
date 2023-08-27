@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { Avatar, Box, Button, Icon } from '@mui/material';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import { setOpenConversation } from '../redux/data';
-import allowedOrigin from '../../config/alowedOrigins';
+import allowedOrigin from '../config/allowedOrigins';
 
 const ChatPage = () => {
     const {id} = useParams()

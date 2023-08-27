@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, TextField, Button, Card } from '@mui/material';
-import allowedOrigin from '../../config/alowedOrigins';
+import allowedOrigin from '../config/allowedOrigins';
 
 const RegisterPage = () => {
     const nameRef = useRef()
