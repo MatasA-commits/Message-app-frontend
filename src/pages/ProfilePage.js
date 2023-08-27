@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import { Box, TextField, Button, Card } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setAllUsers } from '../redux/data';
-import allowedOrigin from '../config/alowedOrigins';
+import allowedOrigin from '../../config/alowedOrigins';
 
 const ProfilePage = () => {
     const nameRef = useRef()
